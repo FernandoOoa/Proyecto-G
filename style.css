@@ -9,15 +9,13 @@ body {
     margin: 0;
     overflow-x: hidden;
     color: #333;
-    padding: 10px;
-    /* Para que no choque con bordes en pantallas pequeñas */
+    padding: 10px; /* Para que no choque con bordes en pantallas pequeñas */
 }
 
 /* 📦 Contenedor principal */
 .container {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 5vw;
-    /* Adaptable al tamaño de pantalla */
+    padding: 5vw; /* Adaptable al tamaño de pantalla */
     border-radius: 2vw;
     box-shadow: 0 1vw 2.5vw rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -35,16 +33,14 @@ body {
 
 /* 🔖 Título */
 h1 {
-    font-size: 6vw;
-    /* Escalable según ancho de pantalla */
+    font-size: 6vw; /* Escalable según ancho de pantalla */
     color: #e91e63;
     margin-bottom: 4vw;
 }
 
 /* 📸 Foto circular */
 .couple-photo {
-    width: 30vw;
-    /* Se adapta al ancho de pantalla */
+    width: 30vw;  /* Se adapta al ancho de pantalla */
     max-width: 150px;
     height: 30vw;
     max-height: 150px;
@@ -125,43 +121,19 @@ button {
 }
 
 @keyframes rainbow {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes floatUp {
-    from {
-        transform: translateY(0);
-        opacity: 0.9;
-    }
-
-    to {
-        transform: translateY(-25vw);
-        opacity: 0;
-    }
-
-    /* escala según pantalla */
+    from { transform: translateY(0); opacity: 0.9; }
+    to { transform: translateY(-25vw); opacity: 0; } /* escala según pantalla */
 }
 
 @keyframes fadeInOut {
-
-    0%,
-    100% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 /* 💖 Mensaje final */
@@ -203,24 +175,14 @@ button {
 
 .video-container iframe {
     width: 100%;
-    height: 56.25vw;
-    /* Mantener proporción 16:9 */
+    height: 56.25vw; /* Mantener proporción 16:9 */
     max-height: 315px;
     border: none;
 }
 
 /* 🖥️ Medias queries para pantallas muy pequeñas */
 @media (max-width: 480px) {
-    h1 {
-        font-size: 7vw;
-    }
-
-    p {
-        font-size: 4vw;
-    }
-
-    button {
-        font-size: 4vw;
-        padding: 3vw 5vw;
-    }
+    h1 { font-size: 7vw; }
+    p { font-size: 4vw; }
+    button { font-size: 4vw; padding: 3vw 5vw; }
 }
