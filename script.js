@@ -49,13 +49,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Función para mostrar mensaje final
-    const showYesMessage = () => {
-        content.innerHTML = `
-            <h1>¡Sabía que dirías que sí!</h1>
-            <p class="final-message">¡Me haces el hombre más feliz del mundo! 💑</p>
-            <img src="https://i.ibb.co/3kC6C1f/celebration.gif" alt="Celebración" class="celebration-gif">
-        `;
-    };
+const showYesMessage = () => {
+    content.innerHTML = `
+        <div class="yes-message">
+            <h1>💖 ¡Sabía que dirías que sí! 💖</h1>
+            <p class="final-message">Me haces la persona más feliz del mundo 🌍✨</p>
+            <img src="https://i.ibb.co/3kC6C1f/celebration.gif" 
+                 alt="Celebración" 
+                 class="celebration-gif">
+        </div>
+    `;
+
+    // Animación de entrada
+    const message = document.querySelector('.yes-message');
+    message.classList.add('fade-in');
+};
+
 
     // Función para crear frases flotantes
     const createFloatingPhrase = () => {
