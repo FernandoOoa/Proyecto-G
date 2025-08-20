@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* 🎨 Estilos generales */
 body {
     background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* Contenedor principal */
+/* 📦 Contenedor principal */
 .container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
@@ -31,7 +31,7 @@ body {
     }
 }
 
-/* Contenido dentro del contenedor */
+/* ✨ Contenido dentro */
 .content {
     opacity: 0;
     animation: fadeInContent 1s forwards 0.5s;
@@ -43,14 +43,14 @@ body {
     }
 }
 
-/* Título principal */
+/* 🔖 Título */
 h1 {
     font-size: 28px;
     color: #e91e63;
     margin-bottom: 20px;
 }
 
-/* Foto de la pareja */
+/* 📸 Foto circular */
 .couple-photo {
     width: 150px;
     height: 150px;
@@ -61,21 +61,20 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Párrafo de texto */
+/* 📝 Párrafos */
 p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
-/* Contenedor de botones */
+/* 🔘 Botones */
 .buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
-/* Botones */
 button {
     padding: 15px 25px;
     border: none;
@@ -89,7 +88,6 @@ button {
 
 #yesBtn {
     background-color: #4CAF50;
-    /* Verde */
     color: white;
 }
 
@@ -100,109 +98,35 @@ button {
 
 #noBtn {
     background-color: #f44336;
-    /* Rojo */
     color: white;
     position: relative;
-    /* Necesario para el movimiento */
 }
 
-.floating-phrase {
-    position: absolute;
-    font-size: 1.2em;
-    color: rgba(255, 255, 255, 0.6);
-    white-space: nowrap;
-    opacity: 0;
-    animation: floatDown 15s linear infinite, fadeInOut 3s ease-in-out infinite alternate;
-    z-index: -1;
-    /* Para que estén detrás del contenido principal */
-}
-
-@keyframes floatDown {
-    0% {
-        top: -50px;
-        transform: translateX(var(--randomX-start));
-    }
-
-    100% {
-        top: 100vh;
-        transform: translateX(var(--randomX-end));
-    }
-}
-
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Contenedor de frases en el fondo */
+/* 🌌 Fondo de frases */
 .background-container {
     position: fixed;
     inset: 0;
     overflow: hidden;
     z-index: -1;
-    /* ✅ Siempre atrás */
     pointer-events: none;
-    /* No bloquea clicks */
 }
 
-/* Frases flotantes */
+/* 🌈 Frases flotantes con arcoiris */
 .floating-phrase {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.7);
-    /* ✅ más visibles */
-    white-space: nowrap;
-}
-
-/* Animaciones */
-@keyframes floatUp {
-    from {
-        transform: translateY(0);
-        opacity: 0.8;
-    }
-
-    to {
-        transform: translateY(-200px);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeInOut {
-
-    0%,
-    100% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-/* Frases flotantes con efecto arcoiris */
-.floating-phrase {
+    position: fixed;
     font-size: 1.3rem;
     font-weight: bold;
+    white-space: nowrap;
     background: linear-gradient(270deg,
             #ff3c3c, #ff8c00, #ffd700, #32cd32, #1e90ff, #8a2be2, #ff1493);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbow 8s ease infinite, floatUp 12s ease-in-out forwards, fadeInOut 3s;
-    white-space: nowrap;
-    pointer-events: none;
+    animation: rainbow 8s ease infinite,
+        floatUp 12s ease-in-out forwards,
+        fadeInOut 3s;
 }
 
-/* Arcoiris animado */
 @keyframes rainbow {
     0% {
         background-position: 0% 50%;
@@ -217,7 +141,6 @@ button {
     }
 }
 
-/* Flotación hacia arriba */
 @keyframes floatUp {
     from {
         transform: translateY(0);
@@ -230,7 +153,6 @@ button {
     }
 }
 
-/* Suavizar aparición y desaparición */
 @keyframes fadeInOut {
 
     0%,
@@ -243,6 +165,7 @@ button {
     }
 }
 
+/* 💖 Mensaje final */
 .yes-message {
     text-align: center;
     margin-top: 20px;
@@ -268,7 +191,6 @@ button {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Animación entrada */
 @keyframes popIn {
     0% {
         transform: scale(0.5);
@@ -299,44 +221,4 @@ button {
         opacity: 1;
         transform: translateY(0);
     }
-}
-.yes-message {
-  text-align: center;
-  margin-top: 20px;
-  animation: popIn 0.8s ease-out;
-}
-
-.yes-message h1 {
-  font-size: 2.5rem;
-  color: #ff4081;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
-}
-
-.final-message {
-  font-size: 1.5rem;
-  color: #333;
-  margin: 15px 0;
-}
-
-.celebration-gif {
-  max-width: 300px;
-  margin-top: 15px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* Animación entrada */
-@keyframes popIn {
-  0% { transform: scale(0.5); opacity: 0; }
-  70% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); }
-}
-
-.fade-in {
-  animation: fadeIn 1.2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
