@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para mostrar mensaje final
     const showYesMessage = () => {
         content.innerHTML = `
-            <h1>¡Sabía que dirías que sí!</h1>
-            <p class="final-message">¡Me haces el hombre más feliz del mundo! 💑</p>
-            <img src="https://i.ibb.co/3kC6C1f/celebration.gif" alt="Celebración" class="celebration-gif">
+            <h1>Te amo Greta me haces muy feliz</h1>
+            <p class="final-message">Te quiero como mi Princesa toda la vida</p>
+            <img src="https://i.pinimg.com/originals/e1/f9/47/e1f94781a5c2fbf53fc719ec9e9e169a.gif" alt="Celebración" class="celebration-gif">
         `;
     };
 
