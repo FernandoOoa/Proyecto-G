@@ -7,21 +7,30 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 10px;
+    padding: 0;
     color: #333;
 }
 
-/* 📦 Contenedor principal */
+/* 📦 Contenedor principal: ocupa 75% de la pantalla */
 .container {
     background-color: rgba(255, 255, 255, 0.95);
-    padding: clamp(20px, 5vw, 40px);
-    border-radius: clamp(15px, 2vw, 30px);
+    width: 75vw;
+    /* 75% del ancho de pantalla */
+    height: 75vh;
+    /* 75% del alto de pantalla */
+    max-width: 900px;
+    /* Limite máximo en pantallas grandes */
+    max-height: 800px;
+    padding: 2vw;
+    border-radius: 2vw;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 100%;
-    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    /* Permite scroll si el contenido excede el contenedor */
     animation: fadeIn 1s forwards;
-    overflow: hidden;
 }
 
 /* ✨ Contenido */
@@ -32,15 +41,15 @@ body {
 
 /* 🔖 Título */
 h1 {
-    font-size: clamp(24px, 6vw, 36px);
+    font-size: clamp(24px, 3vw, 36px);
     color: #e91e63;
     margin-bottom: 1.5em;
 }
 
 /* 📸 Foto circular */
 .couple-photo {
-    width: clamp(120px, 25vw, 150px);
-    height: clamp(120px, 25vw, 150px);
+    width: clamp(120px, 15vw, 150px);
+    height: clamp(120px, 15vw, 150px);
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #fff;
@@ -50,7 +59,7 @@ h1 {
 
 /* 📝 Párrafos */
 p {
-    font-size: clamp(14px, 4vw, 16px);
+    font-size: clamp(14px, 1.8vw, 16px);
     line-height: 1.6;
     margin-bottom: 2em;
 }
@@ -64,10 +73,10 @@ p {
 }
 
 button {
-    padding: clamp(10px, 3vw, 18px) clamp(20px, 6vw, 25px);
+    padding: clamp(10px, 1.5vw, 18px) clamp(20px, 3vw, 25px);
     border: none;
     border-radius: 50px;
-    font-size: clamp(14px, 4vw, 18px);
+    font-size: clamp(14px, 1.5vw, 18px);
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -87,7 +96,6 @@ button {
 #noBtn {
     background-color: #f44336;
     color: #fff;
-    position: relative;
 }
 
 /* 📹 Video responsive */
@@ -98,7 +106,7 @@ button {
     /* 16:9 */
     height: 0;
     margin-bottom: 1.5em;
-    border-radius: clamp(10px, 2vw, 15px);
+    border-radius: 1vw;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
@@ -155,13 +163,13 @@ button {
 }
 
 .yes-message h1 {
-    font-size: clamp(32px, 8vw, 50px);
+    font-size: clamp(32px, 5vw, 50px);
     color: #ff4081;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .final-message {
-    font-size: clamp(18px, 5vw, 24px);
+    font-size: clamp(18px, 3vw, 24px);
     color: #333;
     margin: 1em 0;
 }
@@ -169,6 +177,15 @@ button {
 .celebration-gif {
     max-width: 100%;
     margin-top: 1em;
-    border-radius: clamp(10px, 2vw, 15px);
+    border-radius: 1vw;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    .container {
+        width: 90vw;
+        height: auto;
+        /* Altura automática en móviles */
+    }
 }
