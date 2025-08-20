@@ -1,0 +1,144 @@
+/* Estilos generales */
+body {
+    background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    transform: scale(0.9);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Contenido dentro del contenedor */
+.content {
+    opacity: 0;
+    animation: fadeInContent 1s forwards 0.5s;
+}
+
+@keyframes fadeInContent {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Título principal */
+h1 {
+    font-size: 28px;
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+/* Foto de la pareja */
+.couple-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Párrafo de texto */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de botones */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Botones */
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#yesBtn {
+    background-color: #4CAF50;
+    /* Verde */
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+#noBtn {
+    background-color: #f44336;
+    /* Rojo */
+    color: white;
+    position: relative;
+    /* Necesario para el movimiento */
+}
+
+.floating-phrase {
+    position: absolute;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+    opacity: 0;
+    animation: floatDown 15s linear infinite, fadeInOut 3s ease-in-out infinite alternate;
+    z-index: -1;
+    /* Para que estén detrás del contenido principal */
+}
+
+@keyframes floatDown {
+    0% {
+        top: -50px;
+        transform: translateX(var(--randomX-start));
+    }
+
+    100% {
+        top: 100vh;
+        transform: translateX(var(--randomX-end));
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
