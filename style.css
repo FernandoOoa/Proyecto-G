@@ -5,25 +5,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    /* Usar min-height para evitar problemas de contenido */
     margin: 0;
-    overflow: hidden;
+    padding: 20px;
+    /* Añade un poco de padding por si el contenido se desborda en pantallas muy pequeñas */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño total */
     color: #333;
 }
 
 /* 📦 Contenedor principal */
 .container {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
+    padding: clamp(20px, 5vw, 40px);
+    /* Padding fluido y adaptable */
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 70%;
-    transform: scale(0.9);
-    animation: fadeIn 1s forwards;
+    width: 90vw;
+    /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 600px;
+    /* Pero no más de 600px en pantallas grandes */
+    opacity: 0;
+    /* Opacidad inicial para la animación */
+    animation: scaleIn 1s forwards;
 }
 
-@keyframes fadeIn {
+/* Animación de entrada para el contenedor */
+@keyframes scaleIn {
     to {
         transform: scale(1);
         opacity: 1;
@@ -44,15 +54,17 @@ body {
 
 /* 🔖 Título */
 h1 {
-    font-size: 28px;
+    /* Fuente fluida: mínimo 1.5rem, preferido 5vw, máximo 2.2rem */
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
     color: #e91e63;
     margin-bottom: 20px;
 }
 
 /* 📸 Foto circular */
 .couple-photo {
-    width: 150px;
-    height: 150px;
+    width: clamp(120px, 30vw, 150px);
+    /* Tamaño adaptable de la imagen */
+    height: clamp(120px, 30vw, 150px);
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #fff;
@@ -62,7 +74,8 @@ h1 {
 
 /* 📝 Párrafos */
 p {
-    font-size: 16px;
+    /* Fuente fluida: mínimo 0.9rem, preferido 2.5vw, máximo 1.1rem */
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     line-height: 1.6;
     margin-bottom: 30px;
 }
@@ -72,13 +85,16 @@ p {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
+    /* Permite que los botones se reorganicen si no caben */
 }
 
 button {
-    padding: 15px 25px;
+    /* Padding y fuente fluidos */
+    padding: clamp(12px, 3vw, 15px) clamp(20px, 4vw, 25px);
     border: none;
     border-radius: 50px;
-    font-size: 18px;
+    font-size: clamp(1rem, 3vw, 1.1rem);
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -101,7 +117,23 @@ button {
     position: relative;
 }
 
-/* 🌌 Fondo de frases */
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .buttons {
+        flex-direction: column;
+        /* Apila los botones verticalmente */
+        align-items: center;
+        /* Centra los botones apilados */
+    }
+
+    button {
+        width: 80%;
+        /* Le da a los botones un ancho consistente */
+    }
+}
+
+
+/* 🌌 Fondo de frases (sin cambios, ya es responsivo) */
 .background-container {
     position: fixed;
     inset: 0;
@@ -110,7 +142,7 @@ button {
     pointer-events: none;
 }
 
-/* 🌈 Frases flotantes con arcoiris */
+/* 🌈 Frases flotantes con arcoiris (sin cambios, ya usa REM) */
 .floating-phrase {
     position: fixed;
     font-size: 1.3rem;
@@ -123,29 +155,30 @@ button {
     animation: rainbow 8s ease infinite, floatUp 12s ease-in-out forwards, fadeInOut 3s;
 }
 
+/* Animaciones de frases (sin cambios) */
 @keyframes rainbow {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 50%
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position: 100% 50%
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 50%
     }
 }
 
 @keyframes floatUp {
     from {
         transform: translateY(0);
-        opacity: 0.9;
+        opacity: .9
     }
 
     to {
         transform: translateY(-200px);
-        opacity: 0;
+        opacity: 0
     }
 }
 
@@ -153,11 +186,11 @@ button {
 
     0%,
     100% {
-        opacity: 0;
+        opacity: 0
     }
 
     50% {
-        opacity: 1;
+        opacity: 1
     }
 }
 
@@ -169,19 +202,26 @@ button {
 }
 
 .yes-message h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    /* Título final también fluido */
     color: #ff4081;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .final-message {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    /* Mensaje final fluido */
     color: #333;
     margin: 15px 0;
 }
 
 .celebration-gif {
-    max-width: 300px;
+    max-width: 100%;
+    /* Asegura que el GIF nunca sea más ancho que su contenedor */
+    height: auto;
+    /* Mantiene la proporción del GIF */
+    width: 300px;
+    /* Un ancho base que puede reducirse con max-width */
     margin-top: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -204,10 +244,11 @@ button {
 }
 
 .fade-in {
-    animation: fadeIn 1.2s ease-in forwards;
+    animation: fadeInUp 1.2s ease-in forwards;
 }
 
-@keyframes fadeIn {
+/* Renombrada para evitar conflicto con la otra animación 'fadeIn' */
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -219,8 +260,8 @@ button {
     }
 }
 
+/* 📹 Contenedor de video responsivo */
 .video-container {
-    position: relative;
     width: 100%;
     max-width: 560px;
     margin: 20px auto;
@@ -231,6 +272,12 @@ button {
 
 .video-container iframe {
     width: 100%;
-    height: 315px;
+    /* El iframe ocupa todo el ancho del contenedor */
+    height: auto;
+    /* La altura se ajusta automáticamente */
+    aspect-ratio: 16 / 9;
+    /* Mantiene la proporción 16:9 del video */
     border: none;
+    display: block;
+    /* Elimina espacios extra debajo del iframe */
 }
