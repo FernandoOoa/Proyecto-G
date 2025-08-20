@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.container');
     const content = document.querySelector('.content');
 
+    // 🔹 Contenedor exclusivo para frases en el fondo
+    const backgroundContainer = document.createElement('div');
+    backgroundContainer.classList.add('background-container');
+    document.body.appendChild(backgroundContainer);
+
     // Frases románticas
     const phrases = [
         "Eres mi todo",
@@ -46,9 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para mostrar mensaje final
     const showYesMessage = () => {
         content.innerHTML = `
-            <h1>Te amo Greta me haces muy feliz</h1>
-            <p class="final-message">Te quiero como mi Princesa toda la vida</p>
-            <img src="https://i.pinimg.com/originals/e1/f9/47/e1f94781a5c2fbf53fc719ec9e9e169a.gif" alt="Celebración" class="celebration-gif">
+            <h1>¡Sabía que dirías que sí!</h1>
+            <p class="final-message">¡Me haces el hombre más feliz del mundo! 💑</p>
+            <img src="https://i.ibb.co/3kC6C1f/celebration.gif" alt="Celebración" class="celebration-gif">
         `;
     };
 
@@ -58,17 +63,22 @@ document.addEventListener('DOMContentLoaded', () => {
         phraseElement.classList.add('floating-phrase');
         phraseElement.textContent = phrases[Math.floor(Math.random() * phrases.length)];
 
-        const startX = Math.random() * 100;
-        const endX = startX + (Math.random() * 60 - 30);
-        const duration = 10 + Math.random() * 10;
+        // Posición aleatoria en toda la pantalla
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * window.innerHeight;
+
+        // Configuración aleatoria de animación
+        const duration = 8 + Math.random() * 8; // 8-16s
         const delay = Math.random() * 5;
 
-        phraseElement.style.setProperty('--randomX-start', `${startX}vw`);
-        phraseElement.style.setProperty('--randomX-end', `${endX}vw`);
-        phraseElement.style.animationDuration = `${duration}s, 3s`;
-        phraseElement.style.animationDelay = `${delay}s`;
+        Object.assign(phraseElement.style, {
+            position: "fixed",
+            left: `${posX}px`,
+            top: `${posY}px`,
+            animation: `floatUp ${duration}s ease-in-out ${delay}s forwards, fadeInOut 3s`
+        });
 
-        container.appendChild(phraseElement);
+        backgroundContainer.appendChild(phraseElement);
 
         phraseElement.addEventListener('animationend', () => phraseElement.remove());
     };

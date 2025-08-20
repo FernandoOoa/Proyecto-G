@@ -142,3 +142,48 @@ button {
         opacity: 0;
     }
 }
+
+/* Contenedor de frases en el fondo */
+.background-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    /* ✅ Siempre atrás */
+    pointer-events: none;
+    /* No bloquea clicks */
+}
+
+/* Frases flotantes */
+.floating-phrase {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    /* ✅ más visibles */
+    white-space: nowrap;
+}
+
+/* Animaciones */
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
