@@ -28,13 +28,25 @@
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+
     <audio
       id="backgroundMusic"
       src="Cancion.mp3"
       loop
-      autoplay
       style="display: none"
     ></audio>
+
+    <script>
+      const music = document.getElementById("backgroundMusic");
+
+      // Reproducir música cuando el usuario haga clic en cualquier parte
+      document.body.addEventListener(
+        "click",
+        () => {
+          music.play().catch((err) => console.log("Error al reproducir:", err));
+        },
+        { once: true }
+      ); // Se ejecuta solo la primera vez que se hace clic
+    </script>
   </body>
 </html>
