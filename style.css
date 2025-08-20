@@ -117,14 +117,11 @@ button {
     font-size: 1.3rem;
     font-weight: bold;
     white-space: nowrap;
-    background: linear-gradient(270deg,
-            #ff3c3c, #ff8c00, #ffd700, #32cd32, #1e90ff, #8a2be2, #ff1493);
+    background: linear-gradient(270deg, #ff3c3c, #ff8c00, #ffd700, #32cd32, #1e90ff, #8a2be2, #ff1493);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbow 8s ease infinite,
-        floatUp 12s ease-in-out forwards,
-        fadeInOut 3s;
+    animation: rainbow 8s ease infinite, floatUp 12s ease-in-out forwards, fadeInOut 3s;
 }
 
 @keyframes rainbow {
