@@ -14,14 +14,7 @@ body {
     /* Asegura que el padding no afecte el tamaño total */
     color: #333;
     cursor: none;
-        /* Oculta el cursor por defecto */
-        background-color: #000;
-        color: #fff;
-        font-family: sans-serif;
-        text-align: center;
-        padding-top: 50px;
-        overflow: hidden;
-        /* Evita barras de desplazamiento */
+    
 }
 
 .heart {
