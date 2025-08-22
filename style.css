@@ -13,6 +13,41 @@ body {
     box-sizing: border-box;
     /* Asegura que el padding no afecte el tamaño total */
     color: #333;
+    cursor: none;
+        /* Oculta el cursor por defecto */
+        background-color: #000;
+        color: #fff;
+        font-family: sans-serif;
+        text-align: center;
+        padding-top: 50px;
+        overflow: hidden;
+        /* Evita barras de desplazamiento */
+}
+
+.heart {
+    position: absolute;
+    /* Permite posicionar los corazones en cualquier lugar */
+    pointer-events: none;
+    /* Los corazones no interferirán con los clics */
+    color: red;
+    /* Color del corazón */
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    /* Centra el corazón en la posición del cursor */
+    animation: fadeOutGrow 1s forwards;
+    /* Aplica la animación */
+}
+
+@keyframes fadeOutGrow {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
 }
 
 /* 📦 Contenedor principal */

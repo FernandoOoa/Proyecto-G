@@ -99,3 +99,22 @@ const showYesMessage = () => {
     // Frases flotantes periódicas
     setInterval(createFloatingPhrase, 1500);
 });
+
+document.addEventListener('mousemove', function(e) {
+    // 1. Crear un nuevo elemento div para el corazón
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = '❤️';
+
+    // 2. Posicionar el corazón en las coordenadas del cursor
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+
+    // 3. Agregar el corazón al cuerpo del documento
+    document.body.appendChild(heart);
+
+    // 4. Eliminar el corazón después de que termine la animación
+    heart.addEventListener('animationend', function() {
+        heart.remove();
+    });
+});
