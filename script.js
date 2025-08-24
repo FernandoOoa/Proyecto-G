@@ -54,7 +54,7 @@ const showYesMessage = () => {
         <div class="yes-message">
             <h1>💖 ¡Sabía que dirías que sí! 💖</h1>
             <p class="final-message">Me haces la persona más feliz del mundo 🌍✨
-            Yo se que una relacion a distancia puede ser algo complicado pero quiero que lo nuestro sea algo bonito y duradero</p>
+Yo sé que una relación a distancia puede ser algo complicado, pero quiero que lo nuestro sea algo bonito y duradero.</p>
             <img src="https://i.pinimg.com/originals/e1/f9/47/e1f94781a5c2fbf53fc719ec9e9e169a.gif" 
                  alt="Celebración" 
                  class="celebration-gif">
